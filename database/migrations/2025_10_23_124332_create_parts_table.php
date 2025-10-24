@@ -13,7 +13,7 @@ return new class extends Migration {
             $table->id();
             $table->foreignId('car_id')->constrained('cars')->cascadeOnDelete();
             $table->string('name');
-            $table->string('serialnumber');
+            $table->string('serialnumber')->unique();
             $table->timestamps();
 
 
