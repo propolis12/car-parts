@@ -11,10 +11,10 @@
             <input type="hidden" name="is_registered" :value="form.is_registered ? 1 : 0" />
         </div>
 
-        <div class="col-md-6" v-if="form.is_registered">
+        <div class="col-md-6" v-show="form.is_registered">
             <label class="form-label">EČV (registration_number)</label>
             <input type="text" class="form-control" name="registration_number"
-                   v-model="form.registration_number" :required="form.is_registered" maxlength="30" />
+                   v-model="form.registration_number" :required="form.is_registered" :disabled="!form.is_registered" maxlength="30" />
             <div class="form-text">Povinné, ak je auto registrované.</div>
         </div>
     </div>
