@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\CarRequest;
-use App\Http\Requests\StoreCarRequest;
-use App\Http\Requests\UpdateCarRequest;
 use App\Models\Car;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
