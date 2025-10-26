@@ -13,10 +13,13 @@ class PartRequest extends FormRequest
 
     public function rules(): array
     {
+        $part = $this->route('part');
+
         return [
             'name' => ['required', 'string', 'max:255'],
             'serialnumber' => ['required', 'string', 'max:255', Rule::unique('parts', 'serialnumber')
-                ->where(fn ($q) => $q->whereNotNull('serialnumber'))],
+                ->ignore($part?->id)
+            ],
             'car_id' => ['required', 'exists:cars,id'],
         ];
     }
